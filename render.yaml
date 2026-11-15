@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: student-management-system
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    envVars:
+      - key: SMS_DB_URL
+        sync: false
+      - key: SMS_DB_USERNAME
+        sync: false
+      - key: SMS_DB_PASSWORD
+        sync: false
